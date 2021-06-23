@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint src/**/*.ts",
+    "prepare": "husky install",
     "format": "eslint src/**/*.ts --fix",
+    "lint": "eslint src/**/*.ts",
     "build": "tsc",
-    "prepare": "husky install"
+    "watch": "nodemon --watch src -e ts,tsx --exec 'npm run start:dev'",
+    "start:dev": "ts-node src/index.ts"
   },
   "author": "Nicolás A. Vera",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^6.0.0",
+    "nodemon": "^2.0.7",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.4"
   },
